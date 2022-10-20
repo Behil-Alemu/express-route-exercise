@@ -7,7 +7,7 @@ function mean(numbers){
     }
     return sum / numbers.length;
 }
-console.log(mean([1,2,3,4]))
+
 
 function median(numbers){
     const half = Math.floor(numbers.length / 2)
@@ -19,7 +19,7 @@ function median(numbers){
 
 }
 
-console.log(median([1,3,4]))
+
 
 function findMode(array) {
     // This function starts by creating an object where the keys are each unique number of the array and the values are the amount of times that number appears in the array.
@@ -52,7 +52,7 @@ function findMode(array) {
     return biggestValuesKey
   
   }
-  console.log(findMode([1,3,3,4]))
+
 
 
 
@@ -67,7 +67,17 @@ function findMode(array) {
 
 // console.log(mapping)
 
+function changeToNum(arrStr){
+  arr = []
+  for(let i in arrStr){
+    let valToNumber = Number(arrStr[i]);
+    arr.push(valToNumber)
+  }
+  return arr
+}
+
+console.log(changeToNum(['1','2']))
 
 
-module.exports = { findMode, mean, median };
+module.exports = { findMode, mean, median, changeToNum };
 

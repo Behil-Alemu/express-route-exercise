@@ -8,29 +8,32 @@ app.use(express.json());
 
 
 app.get('/mean', function(req, res, next) {
+  let input = operations.changeToNum(req.query.nums.split(','))
     return res.json({
         response: {
         operation: "mean",
-        value: operations.mean((req.query.nums)),
-        input: Number(req.query.nums)
+        input:input,
+        value: operations.mean((input))
     }});
   });
 
 app.get('/median', function(req, res, next) {
+  let input = operations.changeToNum(req.query.nums.split(','))
     return res.json({
         response: {
         operation: "median",
-        value: operations.median((req.query.nums)),
-        input: parseInt(req.query.nums)
+        input:input,
+        value: operations.median(input)
     }});
   });
 
 app.get('/mode', function(req, res, next) {
+  let input = operations.changeToNum(req.query.nums.split(','))
     return res.json({
         response: {
         operation: "mode",
-        value: operations.findMode((req.query.nums)),
-        input: parseInt(req.query.nums)
+        input:input,
+        value: operations.findMode(input)
       }});
   });
 
